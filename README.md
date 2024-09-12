@@ -2,6 +2,22 @@
 
 ![image](https://github.com/user-attachments/assets/d7cd937e-26fd-4bd0-b03a-127c764f6554)
 
+# NFC Ultralight Generator
+
+## Introduction
+
+The NFC Ultralight Generator is a Python script designed specifically for generating random or sequential UIDs (Unique Identifiers) for Mifare Ultralight cards to be used with Flipper Zero. This powerful tool not only creates individual card files but also generates a comprehensive playlist for seamless integration with Flipper Zero.
+
+Key Features:
+- Generates random or sequential UIDs for Mifare Ultralight cards
+- Creates individual .nfc files for each simulated card
+- Produces a playlist file for easy use with Flipper Zero
+- User-friendly interface with color-coded output
+- Customizable options for card generation
+
+Whether you're testing NFC applications, developing new features for Flipper Zero, or simply exploring the capabilities of Mifare Ultralight cards, this script provides a convenient and efficient way to generate the necessary files and data structures.
+
+The following documentation will guide you through the installation process, explain how to use the script, and provide details on its inner workings. Let's dive in and start generating NFC card data for your Flipper Zero projects!
 
 generate full ultralight card data for Flipper Zero NFC emulating
 
