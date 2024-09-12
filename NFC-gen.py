@@ -92,8 +92,8 @@ def generate_nfc_data(uid):
     return '\n'.join(data)
 
 def generate_and_save_cards(num_cards, start_uid=None, sequential=False):
-    if not os.path.exists('nfc_cards'):
-        os.makedirs('nfc_cards')
+    if not os.path.exists('nfcgen'):
+        os.makedirs('nfcgen')
 
     current_uid = start_uid if start_uid else generate_random_uid()
     generated_cards = []
@@ -103,7 +103,7 @@ def generate_and_save_cards(num_cards, start_uid=None, sequential=False):
         nfc_data = generate_nfc_data(current_uid)
         uid = current_uid.replace(' ', '')
         
-        filename = f"nfc_cards/{uid}.nfc"
+        filename = f"nfcgen/{uid}.nfc"
         with open(filename, 'w') as f:
             f.write(nfc_data)
         
@@ -161,7 +161,7 @@ def main():
         generated_cards = generate_and_save_cards(num_cards)
 
     save_card_list(generated_cards)
-    print(orange_bold(f"\nGenerated {num_cards} cards. Files are saved in the 'nfc_cards' folder with .nfc extension."))
+    print(orange_bold(f"\nGenerated {num_cards} cards. Files are saved in the '1' folder with .nfc extension."))
     print(orange_bold("=" * 50))
     print(orange_bold("Thank you for using the NFC Ultralight Generator!"))
     print(green_bold("\nA PlayList for Flipper Zero has been generated."))
