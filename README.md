@@ -1,5 +1,7 @@
 # NFC Generator for Flipper Zero v2.0
 
+> **DISCLAIMER**: This tool is created for educational purposes only. It is designed to help understand the principles and functionality of MIFARE Ultralight cards, their memory structure, and the BCC (Block Check Character) calculation. The knowledge gained from this tool should be used responsibly and ethically. The authors do not endorse or encourage any unauthorized use of this tool to create counterfeit cards or bypass security systems. Always respect intellectual property rights and local laws regarding NFC technology usage.
+
 <p align="center">
   <img src="assets/img/nfclogo.png" alt="NFC Generator Logo" width="300">
 </p>
