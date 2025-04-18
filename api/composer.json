@@ -1,0 +1,15 @@
+{
+    "name": "nug/nfc-generator-api",
+    "description": "API for generating NFC card files for Flipper Zero",
+    "type": "project",
+    "require": {
+        "php": ">=7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Controllers\\": "src/Controllers/",
+            "Services\\": "src/Services/",
+            "Config\\": "src/Config/"
+        }
+    }
+}

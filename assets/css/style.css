@@ -1,0 +1,175 @@
+:root {
+    --bg-color: #2E2E2E;
+    --text-color: #FF9900;
+    --accent-color: #92C742;
+    --dark-panel: #212121;
+    --button-color: #FF9900;
+    --button-text: #000000;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+h2 {
+    color: var(--accent-color);
+    font-size: 16px;
+    margin-top: 0;
+}
+
+.separator {
+    border-bottom: 1px solid var(--text-color);
+    margin: 15px 0;
+}
+
+.panel {
+    background-color: var(--bg-color);
+    border: 1px solid var(--text-color);
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.panel-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"], 
+input[type="number"] {
+    background-color: var(--dark-panel);
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    padding: 8px;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+button {
+    background-color: var(--button-color);
+    color: var(--button-text);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: opacity 0.2s;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.progress-container {
+    margin: 20px 0;
+    position: relative;
+}
+
+progress {
+    width: 100%;
+    height: 20px;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+progress::-webkit-progress-bar {
+    background-color: var(--dark-panel);
+    border-radius: 4px;
+}
+
+progress::-webkit-progress-value {
+    background-color: var(--text-color);
+    border-radius: 4px;
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+.log {
+    background-color: var(--dark-panel);
+    color: var(--text-color);
+    padding: 10px;
+    height: 150px;
+    overflow-y: auto;
+    font-family: Consolas, monospace;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.card-list {
+    background-color: var(--dark-panel);
+    color: var(--text-color);
+    padding: 10px;
+    height: 150px;
+    overflow-y: auto;
+    font-family: Consolas, monospace;
+    border-radius: 4px;
+}
+
+.card-item {
+    padding: 3px 0;
+    cursor: pointer;
+}
+
+.card-item:hover {
+    background-color: rgba(255, 153, 0, 0.2);
+}
+
+.card-item.selected {
+    background-color: rgba(255, 153, 0, 0.3);
+}

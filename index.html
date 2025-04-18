@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFC Card Generator for Flipper Zero</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="assets/img/nfclogo.png" alt="NFC Logo" style="width: 300px; margin-bottom: 2px;">
+            <h1>NFC Card Generator for Flipper Zero</h1>
+            <h2>Generate NFC Ultralight Cards</h2>
+        </header>
+
+        <div class="separator"></div>
+
+        <div class="panel">
+            <div class="panel-title">Generation Settings</div>
+
+            <div class="form-group">
+                <label>Generation Mode:</label>
+                <div class="radio-group">
+                    <label class="radio-label">
+                        <input type="radio" name="mode" value="random" checked> Random
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="mode" value="sequential"> Sequential
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="cardCount">Number of Cards:</label>
+                <input type="number" id="cardCount" value="10" min="1">
+            </div>
+
+            <div class="form-group">
+                <label for="startUid">Starting UID (optional):</label>
+                <div style="display: flex; gap: 10px;">
+                    <input type="text" id="startUid" placeholder="e.g., 04 12 A5 F7 22 D9 81">
+                    <button id="randomUidBtn" style="white-space: nowrap;">Random UID</button>
+                </div>
+            </div>
+
+            <button id="generateBtn" style="width: 100%;">Generate Cards</button>
+        </div>
+
+        <div class="progress-container">
+            <progress id="progressBar" value="0" max="100"></progress>
+            <div id="progressText" class="progress-text">0%</div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-title">Generation Log</div>
+            <div id="logOutput" class="log"></div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-title">Generated Cards</div>
+            <div id="cardList" class="card-list"></div>
+
+            <div class="button-container">
+                <button id="downloadBtn" disabled>Download ZIP</button>
+                <button id="copyUidBtn" disabled>Copy Selected UID</button>
+                <button id="helpBtn" style="margin-left: auto;">Help</button>
+                <button id="aboutBtn">About</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load JavaScript files -->
+    <script src="js/nfcGenerator.js"></script>
+    <script src="js/ui.js"></script>
+    <script>
+        // Initialize the application when the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            const nfcGenerator = new NfcGenerator();
+            const uiManager = new UiManager(nfcGenerator);
+        });
+    </script>
+</body>
+</html>
