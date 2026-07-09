@@ -141,7 +141,7 @@ class UiManager {
                 
                 // Generate card data
                 const nfcData = this.nfcGenerator.generateNfcData(currentUid);
-                const uid = currentUid.replace(/\\s/g, '');
+                const uid = currentUid.replace(/\s/g, '');
                 const filename = `${uid}.nfc`;
                 
                 // Add to ZIP

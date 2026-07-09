@@ -23,6 +23,12 @@ This application generates NFC Ultralight card files compatible with Flipper Zer
 - View generation logs
 - Playlist file generation for Flipper Zero
 
+> **Note on the Signature field**: the 32-byte `Signature` written into each
+> `.nfc` file is randomly generated. A real MIFARE Ultralight EV1 / NTAG
+> signature is an ECDSA signature over the UID produced with NXP's private
+> key and cannot be regenerated. The random value is sufficient for Flipper
+> Zero emulation but will not verify against any real originality check.
+
 ## Understanding MIFARE Ultralight Cards and BCC
 
 ### Card Structure
@@ -117,6 +123,16 @@ The project is organized into the following components:
 - `api/index.php` - Main entry point for the API
 - `api/src/Services/NfcGenerator.php` - Core logic for generating NFC cards
 - `api/src/Controllers/NfcController.php` - API endpoint handling
+
+### Tests
+
+Unit tests cover the pure helpers in `js/nfcGenerator.js` (`formatHex`,
+`calculateBcc`, `incrementUid`, `validateUid`, `generateRandomUid`):
+
+```
+npm install
+npm test
+```
 
 ## Technical Details
 

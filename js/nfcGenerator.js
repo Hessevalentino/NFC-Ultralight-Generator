@@ -46,6 +46,13 @@ class NfcGenerator {
 
     /**
      * Generate a random signature
+     *
+     * NOTE: This returns 32 random bytes as a placeholder. A real MIFARE
+     * Ultralight EV1 / NTAG signature is an ECDSA signature over the UID
+     * produced with NXP's private key and cannot be regenerated. The random
+     * value is enough for Flipper Zero emulation but will not verify against
+     * any real originality check.
+     *
      * @returns {string} - Random signature as a space-separated hexadecimal string
      */
     generateSignature() {
@@ -156,4 +163,9 @@ class NfcGenerator {
 
         return data.join('\n');
     }
+}
+
+// Export for Node/Jest without breaking browser globals
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = NfcGenerator;
 }
