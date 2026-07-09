@@ -1,0 +1,24 @@
+{
+  "name": "nfc-ultralight-generator",
+  "version": "1.0.0",
+  "description": "Generates NFC Ultralight card files compatible with Flipper Zero.",
+  "private": true,
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hessevalentino/NFC-Ultralight-Generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Hessevalentino/NFC-Ultralight-Generator/issues"
+  },
+  "homepage": "https://github.com/Hessevalentino/NFC-Ultralight-Generator#readme",
+  "devDependencies": {
+    "jest": "^30.4.2"
+  }
+}
